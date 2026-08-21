@@ -1,0 +1,181 @@
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.18);
+  transition: border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.project-card:hover {
+  border-color: rgba(68, 211, 194, 0.45);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.3), 0 0 48px rgba(68, 211, 194, 0.08);
+}
+
+.project-visual {
+  position: relative;
+  height: 220px;
+  padding: 20px;
+  background:
+    linear-gradient(135deg, rgba(68, 211, 194, 0.18), rgba(143, 162, 255, 0.12)),
+    #0d1219;
+  transform: translateZ(28px);
+}
+
+.project-visual::before,
+.project-visual::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(68, 211, 194, 0.24);
+  filter: blur(2px);
+  animation: projectOrb 6s ease-in-out infinite;
+}
+
+.project-visual::before {
+  width: 72px;
+  height: 72px;
+  right: 28px;
+  top: 34px;
+}
+
+.project-visual::after {
+  width: 34px;
+  height: 34px;
+  left: 36px;
+  bottom: 34px;
+  background: rgba(240, 200, 106, 0.26);
+  animation-delay: -2s;
+}
+
+.project-visual-video {
+  background:
+    linear-gradient(135deg, rgba(240, 200, 106, 0.18), rgba(68, 211, 194, 0.1)),
+    #0d1219;
+}
+
+.project-visual-future {
+  background:
+    linear-gradient(135deg, rgba(143, 162, 255, 0.18), rgba(255, 255, 255, 0.06)),
+    #0d1219;
+}
+
+.visual-topline,
+.visual-layout span,
+.visual-panel {
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.visual-topline {
+  width: 48%;
+  height: 12px;
+}
+
+.visual-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.visual-layout span {
+  min-height: 62px;
+  animation: visualPulse 4s ease-in-out infinite;
+}
+
+.visual-layout span:first-child {
+  grid-row: span 2;
+}
+
+.visual-panel {
+  position: absolute;
+  right: 22px;
+  bottom: 22px;
+  width: 42%;
+  padding: 14px;
+  display: grid;
+  gap: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.visual-panel span {
+  height: 9px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.project-card-content {
+  position: relative;
+  z-index: 1;
+  padding: 24px;
+  transform: translateZ(18px);
+}
+
+.project-type {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.project-card h3 {
+  margin: 0 0 12px;
+  color: var(--text-strong);
+  font-size: 1.55rem;
+}
+
+.project-card p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.project-tags span {
+  padding: 7px 9px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.project-highlights {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 22px;
+  padding-left: 18px;
+  color: var(--text-muted);
+  font-size: 0.94rem;
+}
+
+.project-highlights li::marker {
+  color: var(--accent-2);
+}
+
+.project-actions .button {
+  min-height: 42px;
+  padding: 0 14px;
+  font-size: 0.9rem;
+}
+
+@keyframes projectOrb {
+  50% {
+    transform: translate3d(-12px, 10px, 0) scale(1.08);
+  }
+}
+
+@keyframes visualPulse {
+  50% {
+    background: rgba(255, 255, 255, 0.21);
+  }
+}

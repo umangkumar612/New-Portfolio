@@ -1,0 +1,143 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid transparent;
+  background: rgba(8, 11, 16, 0.72);
+  backdrop-filter: blur(18px);
+}
+
+.navbar-scrolled {
+  border-color: var(--border);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+}
+
+.skip-link {
+  position: absolute;
+  left: 20px;
+  top: -60px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #041313;
+  font-weight: 700;
+  transition: top 160ms ease;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+.navbar-inner {
+  width: min(1180px, calc(100% - 40px));
+  min-height: 72px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-strong);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.brand-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #061111;
+  font-size: 0.82rem;
+}
+
+.nav-links {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-links a {
+  padding: 9px 11px;
+  border-radius: 8px;
+  color: var(--text-muted);
+  font-size: 0.91rem;
+  font-weight: 700;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: rgba(255, 255, 255, 0.065);
+  color: var(--text-strong);
+}
+
+.resume-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid rgba(68, 211, 194, 0.42);
+  border-radius: 8px;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.mobile-resume,
+.menu-toggle {
+  display: none;
+}
+
+.menu-toggle {
+  width: 42px;
+  height: 42px;
+  margin-left: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text-strong);
+}
+
+@media (max-width: 920px) {
+  .desktop-resume,
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: inline-grid;
+    place-items: center;
+  }
+
+  .nav-links-open {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    top: 76px;
+    display: grid;
+    gap: 6px;
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: rgba(12, 17, 24, 0.98);
+    box-shadow: var(--shadow);
+  }
+
+  .nav-links-open a {
+    padding: 12px;
+  }
+
+  .mobile-resume {
+    display: inline-flex;
+    width: 100%;
+  }
+}
